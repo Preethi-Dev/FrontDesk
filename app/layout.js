@@ -1,7 +1,41 @@
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
+import { Poppins } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
+const helvetica = localFont({
+  src: [
+    {
+      path: "./assets/fonts/HelveticaNeueUltraLight.otf",
+      weight: "100",
+    },
+    {
+      path: "./assets/fonts/HelveticaNeueLight.otf",
+      weight: "200",
+    },
+    {
+      path: "./assets/fonts/HelveticaNeueThin.otf",
+      weight: "300",
+    },
+    {
+      path: "./assets/fonts/HelveticaNeueMedium.otf",
+      weight: "400",
+    },
+    {
+      path: "./assets/fonts/HelveticaNeueBold.otf",
+      weight: "500",
+    },
+    {
+      path: "./assets/fonts/HelveticaNeueHeavy.otf",
+      weight: "600",
+    },
+  ],
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +45,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={helvetica.className}>{children}</body>
     </html>
   );
 }
