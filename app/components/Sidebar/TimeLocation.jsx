@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useAppSelector } from "../../../lib/hooks";
 
 //icons
 import Arrow from "../../assets/icons/arrow-left-right.svg";
@@ -11,10 +12,12 @@ const TimeLocation = () => {
     borderRadius: "6px",
     boxShadow: "0px 4px 8px rgba(100, 116, 139, 0.1)",
   };
+  const isCollapse = useAppSelector((state) => state.config.isCollapse);
+
   return (
     <div>
-      <div className="flex justify-between p-2" style={shadowStyle}>
-        <p className="text-[12px]">Location Name</p>
+      <div className="flex justify-center p-2" style={shadowStyle}>
+        {!isCollapse && <p className="text-[12px] mr-auto">Location Name</p>}
         <Image src={Arrow} alt="arrow" />
       </div>
       <div
@@ -24,16 +27,22 @@ const TimeLocation = () => {
           borderRadius: "4px",
         }}
       >
-        <p className="flex gap-2 items-baseline">
-          <span className="text-base font-bold">08:30 AM</span>
-          <span className="text-[14px]">Tue 20 Jan</span>
-        </p>
+        {!isCollapse && (
+          <p className="flex gap-2 items-baseline">
+            <span className="text-base font-bold">08:30 AM</span>
+            <span className="text-[14px]">Tue 20 Jan</span>
+          </p>
+        )}
         <div className="flex gap-1 items-center">
           <Image src={Globe} alt="icon" />
-          <p className="text-[10px]" style={{ lineHeight: 0 }}>
-            UTC: +5 hours
-          </p>
-          <Image src={ChervonDown} alt="icon" className="ml-auto" />
+          {!isCollapse && (
+            <>
+              <p className="text-[10px]" style={{ lineHeight: 0 }}>
+                UTC: +5 hours
+              </p>
+              <Image src={ChervonDown} alt="icon" className="ml-auto" />
+            </>
+          )}
         </div>
       </div>
     </div>
