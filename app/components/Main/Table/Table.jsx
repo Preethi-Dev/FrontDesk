@@ -6,10 +6,16 @@ import TableColumn from "./TableColumn";
 //icons
 import Globe from "../../../assets/icons/globe.svg";
 import TableFooter from "./TableFooter";
+import { useAppSelector } from "@/lib/hooks";
+import useGenerateTable from "./useGenerateTable";
 
 const Table = () => {
+  const isCollapse = useAppSelector((state) => state.config.isCollapse);
+
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
+
+  const Table = useGenerateTable();
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,7 +33,7 @@ const Table = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [isCollapse]);
 
   console.log(width, height);
 
@@ -36,252 +42,12 @@ const Table = () => {
       <div
         className="flex overflow-scroll"
         style={{
-          maxWidth: `${width}px`,
-          maxHeight: `${height}px`,
+          width: `${width}px`,
+          minWidth: "100%",
+          height: `${height}px`,
         }}
       >
-        <TableColumn
-          title={"Created On"}
-          icon={Globe}
-          contents={[
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-          ]}
-        />
-        <TableColumn
-          title={"Payer"}
-          icon={Globe}
-          contents={[
-            "Theodore T.C. Calvin",
-            "Hannibal Smith",
-            "Hannibal Smith",
-            "Hannibal Smith",
-            "Hannibal Smith",
-            "Hannibal Smith",
-            "Hannibal Smith",
-            "Hannibal Smith",
-            "Hannibal Smith",
-            "Hannibal Smith",
-            "Hannibal Smith",
-            "Hannibal Smith",
-            "Hannibal Smith",
-            "Hannibal Smith",
-            "Hannibal Smith",
-            "Hannibal Smith",
-            "Hannibal Smith",
-            "Hannibal Smith",
-            "Hannibal Smith",
-            "Hannibal Smith",
-            "Hannibal Smith",
-          ]}
-        />
-        <TableColumn
-          title={"Status"}
-          icon={Globe}
-          contents={[
-            "Lead",
-            "Lead",
-            "Lead",
-            "Lead",
-            "Lead",
-            "Lead",
-            "Lead",
-            "Lead",
-            ,
-            "Lead",
-            ,
-            "Lead",
-            ,
-            "Lead",
-            ,
-            "Lead",
-            ,
-            "Lead",
-            ,
-            "Lead",
-            ,
-            "Lead",
-            ,
-            "Lead",
-            ,
-            "Lead",
-            ,
-            "Lead",
-            ,
-            "Lead",
-            ,
-            "Lead",
-            ,
-            "Lead",
-          ]}
-        />
-
-        <TableColumn
-          title={"Email"}
-          icon={Globe}
-          contents={[
-            "theodore@gmail.com",
-            "hannibalsmith@gmail.com",
-            "hannibalsmith@gmail.com",
-            ,
-            "hannibalsmith@gmail.com",
-            ,
-            "hannibalsmith@gmail.com",
-            ,
-            "hannibalsmith@gmail.com",
-            ,
-            "hannibalsmith@gmail.com",
-            ,
-            "hannibalsmith@gmail.com",
-            ,
-            "hannibalsmith@gmail.com",
-            ,
-            "hannibalsmith@gmail.com",
-            ,
-            "hannibalsmith@gmail.com",
-            ,
-            "hannibalsmith@gmail.com",
-            ,
-            "hannibalsmith@gmail.com",
-            ,
-            "hannibalsmith@gmail.com",
-            ,
-            "hannibalsmith@gmail.com",
-            ,
-            "hannibalsmith@gmail.com",
-            ,
-            "hannibalsmith@gmail.com",
-            ,
-            "hannibalsmith@gmail.com",
-            ,
-            "hannibalsmith@gmail.com",
-            ,
-            "hannibalsmith@gmail.com",
-            ,
-            "hannibalsmith@gmail.com",
-          ]}
-        />
-
-        <TableColumn
-          title={"Payer Phone"}
-          icon={Globe}
-          contents={[
-            "+91 966559186876",
-            "+91 966559186876",
-            "+91 966559186876",
-            ,
-            "+91 966559186876",
-            ,
-            "+91 966559186876",
-            ,
-            "+91 966559186876",
-            ,
-            "+91 966559186876",
-            ,
-            "+91 966559186876",
-            ,
-            "+91 966559186876",
-            ,
-            "+91 966559186876",
-            ,
-            "+91 966559186876",
-            ,
-            "+91 966559186876",
-            ,
-            "+91 966559186876",
-            ,
-            "+91 966559186876",
-            ,
-            "+91 966559186876",
-            ,
-            "+91 966559186876",
-            ,
-            "+91 966559186876",
-            ,
-            "+91 966559186876",
-            ,
-            "+91 966559186876",
-            ,
-            "+91 966559186876",
-            ,
-            "+91 966559186876",
-          ]}
-        />
-
-        <TableColumn
-          title={"Services"}
-          icon={Globe}
-          contents={[
-            "Private Language Session",
-            "Swim beginner for class new Sess...",
-            "Fitness Session",
-            "Fitness Session",
-            "Fitness Session",
-            "Fitness Session",
-            "Fitness Session",
-            "Fitness Session",
-            "Fitness Session",
-            "Fitness Session",
-            "Fitness Session",
-            "Fitness Session",
-            "Fitness Session",
-            "Fitness Session",
-            "Fitness Session",
-            "Fitness Session",
-            "Fitness Session",
-            "Fitness Session",
-            "Fitness Session",
-            "Fitness Session",
-            "Fitness Session",
-          ]}
-        />
-
-        <TableColumn
-          title={"Scheduled"}
-          icon={Globe}
-          contents={[
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-            "Sun, 07 Jan 2024 2:42 PM",
-          ]}
-        />
+        {Table}
       </div>
       <TableFooter />
     </div>
