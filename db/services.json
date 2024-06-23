@@ -1,0 +1,192 @@
+{
+  "items": [
+    {
+      "name": "International Soccer League",
+      "type": "class",
+      "status": "public"
+    },
+    {
+      "name": "Regional Baseball Team",
+      "type": "appointment",
+      "status": "private"
+    },
+    {
+      "name": "Professional Basketball Academy",
+      "type": "facility",
+      "status": "disabled"
+    },
+    {
+      "name": "Global Volleyball Club",
+      "type": "class pack",
+      "status": "draft"
+    },
+    {
+      "name": "National Hockey Tournament",
+      "type": "membership",
+      "status": "public"
+    },
+    {
+      "name": "State Golf Championship",
+      "type": "general items",
+      "status": "private"
+    },
+    { "name": "City Cricket Council", "type": "class", "status": "disabled" },
+    {
+      "name": "Community Rugby Match",
+      "type": "appointment",
+      "status": "draft"
+    },
+    {
+      "name": "District Swimming Pool",
+      "type": "facility",
+      "status": "public"
+    },
+    {
+      "name": "Country Tennis Federation",
+      "type": "class pack",
+      "status": "private"
+    },
+    {
+      "name": "World Gymnastics Event",
+      "type": "membership",
+      "status": "disabled"
+    },
+    {
+      "name": "Municipal Badminton Court",
+      "type": "general items",
+      "status": "draft"
+    },
+    {
+      "name": "Continental Football Association",
+      "type": "class",
+      "status": "public"
+    },
+    {
+      "name": "Provincial Wrestling Contest",
+      "type": "appointment",
+      "status": "private"
+    },
+    { "name": "Local Cycling Race", "type": "facility", "status": "disabled" },
+    {
+      "name": "National Diving Squad",
+      "type": "class pack",
+      "status": "draft"
+    },
+    {
+      "name": "State Archery School",
+      "type": "membership",
+      "status": "public"
+    },
+    {
+      "name": "Regional Karate Dojo",
+      "type": "general items",
+      "status": "private"
+    },
+    { "name": "City Judo Competition", "type": "class", "status": "disabled" },
+    {
+      "name": "Community Sailing Regatta",
+      "type": "appointment",
+      "status": "draft"
+    },
+    {
+      "name": "District Fencing League",
+      "type": "facility",
+      "status": "public"
+    },
+    {
+      "name": "Country Rowing Team",
+      "type": "class pack",
+      "status": "private"
+    },
+    {
+      "name": "World Skiing Championship",
+      "type": "membership",
+      "status": "disabled"
+    },
+    {
+      "name": "Municipal Boxing Ring",
+      "type": "general items",
+      "status": "draft"
+    },
+    {
+      "name": "Continental Taekwondo Club",
+      "type": "class",
+      "status": "public"
+    },
+    {
+      "name": "Provincial Squash Tournament",
+      "type": "appointment",
+      "status": "private"
+    },
+    {
+      "name": "Local Marathon Event",
+      "type": "facility",
+      "status": "disabled"
+    },
+    {
+      "name": "National Surfing Association",
+      "type": "class pack",
+      "status": "draft"
+    },
+    {
+      "name": "State Triathlon Competition",
+      "type": "membership",
+      "status": "public"
+    },
+    {
+      "name": "Regional Ice Skating Rink",
+      "type": "general items",
+      "status": "private"
+    },
+    {
+      "name": "City Snowboarding Championship",
+      "type": "class",
+      "status": "disabled"
+    },
+    {
+      "name": "Community Paddleboarding Race",
+      "type": "appointment",
+      "status": "draft"
+    },
+    {
+      "name": "District Weightlifting Club",
+      "type": "facility",
+      "status": "public"
+    },
+    {
+      "name": "Country Shooting Range",
+      "type": "class pack",
+      "status": "private"
+    },
+    {
+      "name": "World Climbing Summit",
+      "type": "membership",
+      "status": "disabled"
+    },
+    {
+      "name": "Municipal Equestrian Show",
+      "type": "general items",
+      "status": "draft"
+    },
+    {
+      "name": "Continental Cheerleading Squad",
+      "type": "class",
+      "status": "public"
+    },
+    {
+      "name": "Provincial Handball Match",
+      "type": "appointment",
+      "status": "private"
+    },
+    {
+      "name": "Local Table Tennis Contest",
+      "type": "facility",
+      "status": "disabled"
+    },
+    {
+      "name": "National Lacrosse League",
+      "type": "class pack",
+      "status": "draft"
+    }
+  ]
+}
