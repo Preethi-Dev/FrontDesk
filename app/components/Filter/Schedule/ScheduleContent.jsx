@@ -1,10 +1,19 @@
 "use client";
 import React from "react";
 import Dropdown from "../../Dropdown";
-import { updateOrder } from "@/lib/scheduleSlice";
+import {
+  updateEndDate,
+  updateOrder,
+  updateStartDate,
+} from "@/lib/scheduleSlice";
 import { DatePicker } from "./DatePicker";
+import { useAppSelector } from "@/lib/hooks";
 
 const ScheduleContent = () => {
+  const dateOrder = useAppSelector((state) => state.schedule.dateOrder);
+  const startDate = useAppSelector((state) => state.schedule.startDate);
+  const endDate = useAppSelector((state) => state.schedule.endDate);
+
   return (
     <div className="flex flex-col gap-5 p-4">
       <div className="flex flex-col gap-2">
@@ -49,15 +58,27 @@ const ScheduleContent = () => {
             },
           ]}
           action={updateOrder}
+          currentItem={dateOrder}
         >
           All time
         </Dropdown>
       </div>
-      <div className="flex gap-5">
-        <DatePicker title={"From"} />
 
-        <DatePicker title={"To"} />
-      </div>
+      {["All", null].includes(dateOrder) && (
+        <div className="flex gap-5">
+          <DatePicker
+            title={"From"}
+            action={updateStartDate}
+            selectedDate={startDate}
+          />
+
+          <DatePicker
+            title={"To"}
+            action={updateEndDate}
+            selectedDate={endDate}
+          />
+        </div>
+      )}
     </div>
   );
 };
