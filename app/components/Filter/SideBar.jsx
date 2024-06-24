@@ -22,7 +22,7 @@ const SideBar = ({ items, activeKey, setActiveKey }) => {
 
   return (
     <div
-      className="flex flex-col gap-2 p-2 w-[214px] border-r border-r-stale-200 bg-stale-50"
+      className="flex flex-col gap-2 p-2 min-w-[214px] border-r border-r-stale-200 bg-stale-50"
       onClick={handleClick}
     >
       {items.map((item, index) => (
