@@ -5,8 +5,9 @@ import {
   updateFilteredService,
 } from "@/lib/serviceSlice";
 import { useState } from "react";
+import Badge from "./badge";
 
-const ServiceName = ({ name = "Jack" }) => {
+const ServiceName = ({ name, type, status }) => {
   const filteredService = useAppSelector(
     (state) => state.service.filteredService
   );
@@ -32,9 +33,11 @@ const ServiceName = ({ name = "Jack" }) => {
         }`}
         onClick={handleClick}
       />
-      <p className="text-sm flex-grow text-stale-700 items-center leading-[0px]">
+      <p className="text-sm flex-grow text-stale-700 items-center mr-auto">
         {name}
       </p>
+      <Badge data={type} />
+      <Badge data={status} status={true} />
     </div>
   );
 };

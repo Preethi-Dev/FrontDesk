@@ -3,15 +3,16 @@ import { useState } from "react";
 //components
 import SideBar from "./SideBar";
 import Content from "./Content";
+import ScheduleContent from "./Schedule/ScheduleContent";
+import PeopleContent from "./People/PeopleContent";
+import ServicesContent from "./Services/ServicesContent";
+import FilterModalFooter from "./FilterModalFooter";
 
 //icons
 import Calendar from "../../assets/icons/calendar.svg";
 import Dashboard from "../../assets/icons/layout-dashboard.svg";
 import Users from "../../assets/icons/users.svg";
-import ScheduleContent from "./Schedule/ScheduleContent";
-import PeopleContent from "./People/PeopleContent";
 import StoreProvider from "@/app/StoreProvider";
-import ServicesContent from "./Services/ServicesContent";
 
 const FilterModal = () => {
   const items = [
@@ -42,17 +43,18 @@ const FilterModal = () => {
 
   return (
     <div
-      className="h-[332px] w-[612px] rounded-md  flex overflow-hidden"
+      className="flex flex-col  bg-white w-[612px] rounded-md"
       style={modalShadowStyle}
     >
-      <StoreProvider>
+      <div className="h-[312px] flex overflow-hidden">
         <SideBar
           items={items}
           activeKey={activeKey}
           setActiveKey={setActiveKey}
         />
         <Content items={items} activeKey={activeKey} />
-      </StoreProvider>
+      </div>
+      <FilterModalFooter />
     </div>
   );
 };

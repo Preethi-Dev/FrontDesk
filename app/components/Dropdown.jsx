@@ -11,16 +11,14 @@ import Check from "../assets/icons/check.svg";
 import { useEffect, useRef, useState } from "react";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 
-const Dropdown = ({ children, menu, action }) => {
+const Dropdown = ({ children, menu, action, currentItem }) => {
   const [activeItem, setActiveItem] = useState(null);
   const [activeItemKey, setActiveItemKey] = useState(menu[0].key);
   const [isReveal, setIsReveal] = useState(false);
   const dropdownRef = useRef();
 
   const dispatch = useAppDispatch();
-  const dateOrder = useAppSelector((state) => state.schedule.dateOrder);
 
-  console.log(dateOrder);
   const handleDropdownClick = (e) => {
     setIsReveal(!isReveal);
   };
@@ -53,21 +51,22 @@ const Dropdown = ({ children, menu, action }) => {
         onClick={handleDropdownClick}
         className="flex justify-between gap-2 py-2 px-3 rounded-md border border-stale-200 cursor-pointer"
       >
-        <p className="text-sm">{dateOrder || children}</p>
+        <p className="text-sm">{currentItem || children}</p>
         <Image src={ChevronDown} alt="icon" />
       </div>
       {isReveal && (
         <div
           onClick={handleClick}
-          className="flex flex-col p-2 h-[232px] overflow-scroll rounded-md border-b border-stale-200"
+          className="flex flex-col p-2 h-[232px] overflow-scroll rounded-md"
         >
-          {menu.map((item) => (
+          {menu.map((item, index) => (
             <div
               key={nanoid()}
               className="flex justify-between cursor-pointer transition-[background-color] hover:bg-slate-100"
             >
               <p className="text-sm p-[6px]  text-stale-700 ">{item.label}</p>
-              {item.key === activeItemKey && (
+              {(item.label === currentItem ||
+                (!currentItem && index === 0)) && (
                 <Image src={Check} alt="icon" className="text-stale-700" />
               )}
             </div>
