@@ -5,7 +5,7 @@ import {
   updateFilteredService,
 } from "@/lib/serviceSlice";
 import { useState } from "react";
-import Badge from "./badge";
+import Badge from "./Badge";
 
 const ServiceName = ({ name, type, status }) => {
   const filteredService = useAppSelector(
